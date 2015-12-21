@@ -91,6 +91,10 @@ underscore@1.0.4
 url@1.0.5
 webapp@1.2.3
 webapp-hashing@1.0.5
+webpack:assets@0.1.0
+webpack:core-config@0.1.0
+webpack:css@0.1.0
 webpack:npmworkaround@0.1.0
+webpack:react@0.1.0
 webpack:reload@0.2.0
 webpack:webpack@0.4.3

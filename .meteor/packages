@@ -19,9 +19,12 @@ react-runtime
 react-meteor-data
 reactrouter:react-router-ssr
 thereactivestack:blazetoreact
-
+nfl:react-helmet
 
 webpack:webpack
+webpack:react
+webpack:css
+webpack:assets
+
 accounts-ui
 accounts-password
-nfl:react-helmet
