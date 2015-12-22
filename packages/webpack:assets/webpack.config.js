@@ -2,8 +2,10 @@ var weight = 999;
 
 function dependencies() {
   return {
-    'url-loader': '^0.5.7',
-    'file-loader': '^0.8.5'
+    devDependencies: {
+      'url-loader': '^0.5.7',
+      'file-loader': '^0.8.5'
+    }
   };
 }
 

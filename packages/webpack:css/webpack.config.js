@@ -1,45 +1,34 @@
 var weight = 200;
 
 function dependencies(settings) {
-  var deps = {
-    'style-loader' : '^0.13.0',
-    'css-loader': '^0.23.0'
+  return {
+    devDependencies: {
+      'style-loader' : '^0.13.0',
+      'css-loader': '^0.23.0',
+      'extract-text-webpack-plugin': '^0.9.1'
+    }
   };
-
-  if (settings.css && settings.css.module) {
-    deps['extract-text-webpack-plugin'] = '^0.9.1';
-  } else {
-    deps['style-collector-loader'] = '^0.1.0';
-  }
-
-  return deps;
 }
 
-function config(settings) {
+function config(settings, require) {
   var cssLoader = '';
   var loaders = [];
   var plugins = [];
+  var moduleStr = (settings.css && settings.css.module) ? 'module&' : '';
 
-  if (settings.css && settings.css.module) {
-    if (settings.isDebug) {
-      if (settings.platform === 'server') {
-        cssLoader = 'css/locals?module&localIdentName=[name]__[local]__[hash:base64:5]';
-      } else {
-        cssLoader = 'style!css?module&localIdentName=[name]__[local]__[hash:base64:5]';
-      }
+  if (settings.isDebug) {
+    if (settings.platform === 'server') {
+      cssLoader = 'css/locals?' + moduleStr + 'localIdentName=[name]__[local]__[hash:base64:5]';
     } else {
-      if (settings.platform === 'server') {
-        cssLoader = 'css/locals?module&localIdentName=[hash:base64:5]';
-      } else {
-        plugins.push(new ExtractTextPlugin('style.css'));
-        cssLoader = ExtractTextPlugin.extract('style', 'css?module&localIdentName=[hash:base64:5]');
-      }
+      cssLoader = 'style!css?' + moduleStr + 'localIdentName=[name]__[local]__[hash:base64:5]';
     }
   } else {
     if (settings.platform === 'server') {
-      cssLoader = 'style-collector!css';
+      cssLoader = 'css/locals?' + moduleStr + 'localIdentName=[hash:base64:5]';
     } else {
-      cssLoader = 'style!css';
+      var ExtractTextPlugin = require('extract-text-webpack-plugin');
+      plugins.push(new ExtractTextPlugin('style.css'));
+      cssLoader = ExtractTextPlugin.extract('style', 'css?' + moduleStr + 'localIdentName=[hash:base64:5]');
     }
   }
 
