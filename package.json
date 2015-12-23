@@ -4,11 +4,10 @@
   "main": "server/entry.js",
   "browser": "client/entry.js",
   "dependencies": {
-    "react-mixin": "^3.0.3",
-    "react": "~0.14.1"
+    "react": "~0.14.1",
+    "react-mixin": "^3.0.3"
   },
   "devDependencies": {
-    "react-mixin": "^3.0.3",
     "webpack": "^1.12.9",
     "webpack-hot-middleware": "^2.4.1",
     "babel-loader": "^6.2.0",
