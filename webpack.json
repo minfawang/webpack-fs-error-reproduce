@@ -1,4 +1,5 @@
 {
+  "root": "apps",
   "devServer": {
     "host": "localhost"
   }
