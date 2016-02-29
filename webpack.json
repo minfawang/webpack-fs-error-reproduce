@@ -1,8 +1,5 @@
 {
   "devServer": {
     "host": "localhost"
-  },
-  "css": {
-    "module": true
   }
 }
