@@ -7,6 +7,15 @@
   "browser": "src/client.js",
   "dependencies": {
     "react": "~0.14.1",
+    "react-addons-create-fragment": "^0.14.7",
+    "react-addons-css-transition-group": "^0.14.7",
+    "react-addons-linked-state-mixin": "^0.14.7",
+    "react-addons-perf": "^0.14.7",
+    "react-addons-pure-render-mixin": "^0.14.7",
+    "react-addons-test-utils": "^0.14.7",
+    "react-addons-transition-group": "^0.14.7",
+    "react-addons-update": "^0.14.7",
+    "react-dom": "^0.14.7",
     "react-mixin": "^3.0.3"
   },
   "devDependencies": {
