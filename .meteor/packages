@@ -26,3 +26,5 @@ blaze-html-templates
 standard-minifier-css
 standard-minifier-js
 react-runtime
+cfs:standard-packages
+cfs:filesystem
